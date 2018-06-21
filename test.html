@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <script src="./jquery-3.3.1.min.js"></script>
+    <script src="./angular.js"></script>
+
+  </head>
+  <body ng-app="app">
+    <div ng-controller="Ctrl">
+        <div ng-repeat="(key , val)  in list">
+          <h2>{{key}}</h2>
+          <h2>{{list[key].value}}</h2>
+          <input type="{{list[key].type}}" ng-model="list[key].value">
+        </div>
+        <button ng-click="show()">xianshi</button>
+    </div>
+  <script>
+      var app = angular.module('app',[]);
+      app.controller('Ctrl',['$scope',function($scope){
+        $scope.list = {
+          username:{
+            type:'text',
+            value:'guohao'
+          },
+          account:{
+            type:'number',
+            value: 12
+          }
+        }
+    $scope.show = function(){
+      console.log();
+      console.log($scope.list.username.value);
+    }
+  }])
+
+
+  </script>
+  </body>
+</html>
