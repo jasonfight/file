@@ -1,0 +1,69 @@
+{
+  "name": "platformio-ide-terminal",
+  "main": "./lib/platformio-ide-terminal",
+  "version": "2.8.4",
+  "description": "A terminal package for Atom, complete with themes, API and more for PlatformIO IDE. Fork of terminal-plus.",
+  "author": "Jeremy Ebneyamin",
+  "keywords": [
+    "PlatformIO",
+    "terminal-plus",
+    "terminal",
+    "iterm",
+    "panel",
+    "pty",
+    "tty",
+    "xterm",
+    "iterm",
+    "iterm2",
+    "console",
+    "powershell"
+  ],
+  "contributors": [
+    {
+      "name": "Ivan Kravets",
+      "email": "me@ikravets.com",
+      "url": "http://platformio.org"
+    },
+    {
+      "name": "Dmytro Kyrychuk",
+      "email": "dmytro.kyrychuck@gmail.com",
+      "url": "http://platformio.org"
+    }
+  ],
+  "homepage": "https://atom.io/packages/platformio-ide-terminal",
+  "repository": "https://github.com/platformio/platformio-atom-ide-terminal",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.12.2 <2.0.0"
+  },
+  "dependencies": {
+    "atom-space-pen-views": "^2.2.0",
+    "pty.js": "https://github.com/platformio/pty.js/tarball/prebuilt",
+    "term.js": "https://github.com/jeremyramin/term.js/tarball/master",
+    "underscore": "^1.8.3"
+  },
+  "activationHooks": [
+    "core:loaded-shell-environment"
+  ],
+  "consumedServices": {
+    "status-bar": {
+      "versions": {
+        "^1.0.0": "consumeStatusBar"
+      }
+    }
+  },
+  "providedServices": {
+    "platformioIDETerminal": {
+      "description": "PlatformIO IDE Terminal API",
+      "versions": {
+        "1.1.0": "providePlatformIOIDETerminal"
+      }
+    },
+    "runInTerminal": {
+      "description": "Deprecated API for PlatformIO IDE 1.0",
+      "versions": {
+        "0.14.5": "provideRunInTerminal"
+      }
+    }
+  }
+}
